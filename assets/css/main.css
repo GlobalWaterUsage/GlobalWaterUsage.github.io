@@ -2864,30 +2864,25 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			/* Match original tile behaviour on small screens:
-			   two columns, all tiles the same size. */
+			/* On small screens, stack all tiles in a single column
+			   so each tab (including NGOs and Sources) sits directly
+			   below the previous one and uses full width. */
 			.tiles {
-				margin: -1.25em 0 0 -1.25em;
+				margin: 0;
+				flex-direction: column;
+				align-items: stretch;
 			}
 
 				.tiles article {
-					width: calc(50% - 1.25em);
-					margin: 1.25em 0 0 1.25em;
-				}
-
-				/* Ensure NGO (4th) and Sources (5th) tiles
-				   use the exact same sizing on small screens. */
-				.tiles article:nth-child(4),
-				.tiles article:nth-child(5) {
-					width: calc(50% - 1.25em);
-					margin-top: 1.25em;
+					width: 100%;
+					margin: 1.25em 0 0 0;
 				}
 
 					.tiles article:hover > .image {
 						-moz-transform: scale(1.0);
 						-webkit-transform: scale(1.0);
 						-ms-transform: scale(1.0);
-						transform: scale(1.0);
+						transform: 1.0;
 					}
 
 		}
