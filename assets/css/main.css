@@ -2791,6 +2791,15 @@ input, select, textarea {
 				opacity: 1;
 			}
 
+			.tiles article.style5 > .image {
+				aspect-ratio: 1 / 1;
+			}
+
+			.tiles article.style5 > .image img {
+				height: 100%;
+				object-fit: cover;
+			}
+
 			.tiles article.style5 > .image:before {
 				background-color: #ae85ca;
 			}
