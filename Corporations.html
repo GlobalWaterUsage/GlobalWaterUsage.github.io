@@ -57,10 +57,12 @@
 
 							<section id="datacenter-water-usage" class="water-usage-section">
 								<header class="major">
-									<h2>Data Centre Water Usage</h2>
+									<h2>
+										Data Centre Water Usage
+										<span class="icon solid fa-info-circle info-icon" title="Based on an estimated 560 billion litres per year of global data centre water use, as reported by the IEA (International Energy Agency) This is an illustrative, approximate figure."></span>
+									</h2>
 								</header>
-								<p>
-									Estimated global water used by data centres since 1 January 2026:
+								<p>ry 2026:
 								</p>
 								<div class="counter-row">
 									<div class="counter-box">
@@ -72,10 +74,8 @@
 										<span class="counter-label">Olympic-size pools (est.)</span>
 									</div>
 								</div>
-								<p class="counter-note">
-									Based on an estimated 3.01 trillion litres per year of global data centre water use.
-									This is an illustrative, approximate figure – not a real-time measurement.
-								</p>
+								
+							
 							</section>
 						</div>
 					</div>
@@ -122,7 +122,7 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				// Annual global data centre water use estimate (litres)
-				const ANNUAL_WATER_LITERS = 3.01e12; // 3.01 trillion L/year
+				const ANNUAL_WATER_LITERS = 5.6e11; // 560 billion L/year
 
 				// Convert annual figure to litres per second
 				const SECONDS_PER_YEAR = 365 * 24 * 60 * 60;

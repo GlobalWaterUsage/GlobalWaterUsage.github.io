@@ -1864,6 +1864,12 @@ input, select, textarea {
 				background-color: rgba(242, 132, 158, 0.1);
 			}
 
+	.info-icon {
+		margin-left: 0.5em;
+		font-size: 0.9em;
+		cursor: help;
+	}
+
 /* List */
 
 	ol {
