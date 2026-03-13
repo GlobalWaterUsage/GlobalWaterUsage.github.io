@@ -2605,16 +2605,6 @@ input, select, textarea {
 			margin: 2.5em 0 0 2.5em;
 		}
 
-			.tiles article:nth-child(4),
-			.tiles article:nth-child(5) {
-				/* Match width of the top tiles */
-				width: calc(33.33333% - 2.5em);
-			}
-
-			/* Shift Sources tile (5th) down slightly */
-			.tiles article:nth-child(5) {
-				margin-top: calc(2.5em + 10px);
-			}
 
 			.tiles article > .image {
 				-moz-transition: -moz-transform 0.5s ease;
@@ -2911,12 +2901,6 @@ input, select, textarea {
 				.tiles article {
 					width: 100%;
 					margin: 1.25em 0 0 0;
-				}
-
-				/* On very small screens, remove extra offset
-				   from the Sources (5th) tile. */
-				.tiles article:nth-child(5) {
-					margin-top: 1.25em;
 				}
 
 		}
