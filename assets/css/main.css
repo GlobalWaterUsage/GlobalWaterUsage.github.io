@@ -2865,17 +2865,23 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			/* Stack tiles in a single column on small screens
-			   so they don't overlap or overflow horizontally. */
+			/* Match original tile behaviour on small screens:
+			   two columns, all tiles the same size. */
 			.tiles {
-				margin: 0;
-				flex-direction: column;
-				align-items: stretch;
+				margin: -1.25em 0 0 -1.25em;
 			}
 
 				.tiles article {
-					width: 100%;
-					margin: 1.25em 0 0 0;
+					width: calc(50% - 1.25em);
+					margin: 1.25em 0 0 1.25em;
+				}
+
+				/* Ensure NGO (4th) and Sources (5th) tiles
+				   use the exact same sizing on small screens. */
+				.tiles article:nth-child(4),
+				.tiles article:nth-child(5) {
+					width: calc(50% - 1.25em);
+					margin-top: 1.25em;
 				}
 
 					.tiles article:hover > .image {
@@ -2896,6 +2902,12 @@ input, select, textarea {
 				.tiles article {
 					width: 100%;
 					margin: 1.25em 0 0 0;
+				}
+
+				/* On very small screens, remove extra offset
+				   from the Sources (5th) tile. */
+				.tiles article:nth-child(5) {
+					margin-top: 1.25em;
 				}
 
 		}
