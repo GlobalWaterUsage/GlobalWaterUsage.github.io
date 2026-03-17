@@ -186,7 +186,52 @@
 	}
 )(jQuery);
 
-// Simple mock contact form notification for demo purposes only.
+// Simple mock contact form notification rendered within the page.
 function showContactMockMessage() {
-	alert('Thank you for your message, we will aim to get back to you as soon as possible.');
+	var existing = document.getElementById('contact-mock-notification');
+
+	if (!existing) {
+		existing = document.createElement('div');
+		existing.id = 'contact-mock-notification';
+		existing.style.position = 'fixed';
+		existing.style.right = '1.5rem';
+		existing.style.bottom = '1.5rem';
+		existing.style.maxWidth = '320px';
+		existing.style.padding = '0.85rem 1rem';
+		existing.style.backgroundColor = 'rgba(88, 88, 88, 0.95)';
+		existing.style.color = '#ffffff';
+		existing.style.fontSize = '0.9rem';
+		existing.style.borderRadius = '4px';
+		existing.style.boxShadow = '0 0.35rem 0.75rem rgba(0, 0, 0, 0.25)';
+		existing.style.zIndex = '9999';
+		existing.style.cursor = 'pointer';
+		existing.style.textAlign = 'left';
+		existing.title = 'Click to dismiss';
+
+		existing.addEventListener('click', function () {
+			existing.style.opacity = '0';
+			setTimeout(function () {
+				if (existing && existing.parentNode) {
+					existing.parentNode.removeChild(existing);
+				}
+			}, 200);
+		});
+
+		document.body.appendChild(existing);
+	}
+
+	existing.textContent = 'Thank you for your message, we will aim to get back to you as soon as possible.';
+	existing.style.opacity = '1';
+
+	// Auto-hide after a few seconds.
+	clearTimeout(existing._hideTimer);
+	existing._hideTimer = setTimeout(function () {
+		if (!existing.parentNode) return;
+		existing.style.opacity = '0';
+		setTimeout(function () {
+			if (existing && existing.parentNode) {
+				existing.parentNode.removeChild(existing);
+			}
+		}, 200);
+	}, 4000);
 }
