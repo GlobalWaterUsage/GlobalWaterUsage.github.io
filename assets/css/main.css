@@ -1870,6 +1870,10 @@ input, select, textarea {
 		cursor: help;
 	}
 
+.water-usage-section {
+	margin-bottom: 3em;
+}
+
 /* List */
 
 	ol {
@@ -2791,7 +2795,8 @@ input, select, textarea {
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #ae85ca;
+				background-color: rgba(0, 0, 0, 0.25);
+				opacity: 1;
 			}
 
 			.tiles article.style6 > .image:before {
