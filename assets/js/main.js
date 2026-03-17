@@ -188,5 +188,5 @@
 
 // Simple mock contact form notification for demo purposes only.
 function showContactMockMessage() {
-	alert('Thank you for your message, we aim to get back to you as soon as possible');
+	alert('Thank you for your message, we will aim to get back to you as soon as possible.');
 }
